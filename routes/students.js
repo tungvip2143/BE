@@ -1,18 +1,17 @@
-import express from "express";
+import express from "express"
+import { studentController } from "../controllers/index.js"
 
-const router = express.Router();
+const router = express.Router()
 
-router.get("/", (req, res) => {
-  res.send("GET students");
-});
+router.get("/", studentController.getAllStudents§)
 
 router.get("/:id", (req, res) => {
   // debugger;
-  res.send(`GET students by id +${req?.params?.id}`);
-});
+  res.send(`GET students by id +${req?.params?.id}`)
+})
 
 router.post("/insert", (req, res) => {
-  res.send("POST insert students");
-});
+  res.send("POST insert students")
+})
 
-export default router;
+export default router
