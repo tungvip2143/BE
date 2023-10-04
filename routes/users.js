@@ -3,9 +3,7 @@ import { body, validationResult } from "express-validator"
 import { userController } from "../controllers/index.js"
 const router = express.Router()
 
-router.get("/", (req, res) => {
-  res.send("GET users")
-})
+router.get("/:id", userController.getDetailUser)
 
 router.post(
   "/login",

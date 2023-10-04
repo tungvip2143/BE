@@ -1,3 +1,3 @@
-import studentController from "./student"
-import userController from "./user"
-export default { studentController, userController }
+import studentController from "./student.js"
+import userController from "./user.js"
+export { studentController, userController }

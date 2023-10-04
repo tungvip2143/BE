@@ -2,16 +2,12 @@ import express from "express"
 import { studentController } from "../controllers/index.js"
 
 const router = express.Router()
+router.get("/", studentController.getAllStudents)
+//get student by id
+router.get("/:id", studentController.getStudentById)
+//put or patch
+router.patch("/", studentController.updateStudent)
+router.post("/", studentController.insertStudent)
 
-router.get("/", studentController.getAllStudents§)
-
-router.get("/:id", (req, res) => {
-  // debugger;
-  res.send(`GET students by id +${req?.params?.id}`)
-})
-
-router.post("/insert", (req, res) => {
-  res.send("POST insert students")
-})
-
+//router.post('/generateFakeStudents', studentController.generateFakeStudents)
 export default router
